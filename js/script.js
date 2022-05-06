@@ -1,12 +1,12 @@
 
 
 
-// Quand le Then au dessus reçois des data il les renvois à addProducts pour faire fonctionneer les const et fonction en dessous
+
 
 
 function addProducts(data) {
 
-  // forEach permet d'executer les fonction donnée dand un tableau (array)
+  // forEach (boucler) permet d'executer les fonction donnée dans un tableau (array)
 
   data.forEach((canape) => {
     const { _id, imageUrl, altTxt, name, description } = canape;

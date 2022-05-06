@@ -70,7 +70,7 @@ fetch("http://localhost:3000/api/products/" + id)
           "Votre produit a bien était ajouter au panier clicker sur ok pour consulter le panier ou annuler pour continuer votre commande."
         )
       ) {
-        window.location.href = "./cart.html";
+        window.location.href = "cart.html";
       }
     });
   });
