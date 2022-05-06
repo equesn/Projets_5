@@ -1,5 +1,4 @@
 
-const url = new URL(window.location.href);
 const SendForm = function (product) {
     btnSubmit.addEventLister("click", function (e) {
         e.preventDefault();
@@ -17,7 +16,7 @@ const SendForm = function (product) {
                 City: city.value,
                 Email: email.value,
             },
-            products: cart,
+            products-id: cart,
         };
 
         console.log(order);
@@ -39,8 +38,8 @@ const SendForm = function (product) {
 
     };
 
-        
-    //OU => fetch("http://url-service-web.com/api/users", {
+       //OU 
+    //fetch("http://url-service-web.com/api/users", {
         //method: “POST”,
         //headers: { 
     //'Accept': 'application/json', 

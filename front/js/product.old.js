@@ -1,3 +1,4 @@
+// la requête GET pour retourne un objet 
 const url = new URL(window.location.href);
 const searchParam = new URLSearchParams(url.search);
 let id = "";
@@ -17,8 +18,7 @@ const productDesc = document.querySelector("#description");
 const productColor = document.querySelector("#colors");
 const quantiter = document.querySelector("#quantity");
 const pImage = document.createElement("img");
-const productTitle = document.querySelector(".item__content__titlePrice");
-const parentDescrip = document.querySelector(".item__content__description");
+
 const ajouterProduit = document.querySelector("#addToCart");
 
 function panier() {
@@ -34,20 +34,23 @@ fetch("http://localhost:3000/api/products/" + id)
   .then((res) => res.json())
   .then((data) => {
     console.log(data);
-    pImage.setAttribute("src", data.imageUrl);
-    pImage.setAttribute("alt", data.altTxt);
+    // Image
+    pImage.src = data.imageUrl
+    pImage.alt = data.altTxt
     productImg.appendChild(pImage);
+
     productPrice.textContent = data.price;
     productName.textContent = data.name;
-    productTitle.appendChild(productName);
     productDesc.textContent = data.description;
-    parentDescrip.appendChild(productDesc);
+
+
     for (let color of data.colors) {
       const optionColor = document.createElement("option");
       optionColor.setAttribute("value", color);
       optionColor.textContent = color;
       productColor.appendChild(optionColor);
     }
+    
     ajouterProduit.addEventListener("click", function () {
       let infoPanier = panier();
       let produit = new Object();
