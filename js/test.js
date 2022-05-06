@@ -1,3 +1,5 @@
+
+const url = new URL(window.location.href);
 const SendForm = function (product) {
     btnSubmit.addEventLister("click", function (e) {
         e.preventDefault();
@@ -21,24 +23,31 @@ const SendForm = function (product) {
         console.log(order);
 
         fetch("http://localhost:3000/api/products/order", {
-            // utilisation de la méthone POST
+            // utilisation de la méthode POST (comme demander)
             method: "POST",
             body: JSON.stringify(order)
             headers: {
-                //référence verd api
-                "Content-Type": "application/json",
+                
+                "Content-Type": "app/json",
             },
         })
 
             .then((Response) => response.JSON())
-            .catch((err)) => console.log(err));
+            .catch((err)) => console.log(err))
 
         });
 
     };
 
         
-        
+    //OU => fetch("http://url-service-web.com/api/users", {
+        //method: “POST”,
+        //headers: { 
+    //'Accept': 'application/json', 
+    //'Content-Type': 'application/json' 
+    //},
+        //body: JSON.stringify(jsonBody)
+    //});
         
 
 

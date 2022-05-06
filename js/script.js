@@ -1,9 +1,4 @@
 
-
-
-
-
-
 function addProducts(data) {
 
   // forEach (boucler) permet d'executer les fonction donnée dans un tableau (array)

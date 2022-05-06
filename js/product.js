@@ -5,7 +5,7 @@ if (searchParam.get("id")) {
   id = searchParam.get("id");
 } else {
   if (confirm("pas de produits selectionner un produit")) {
-    window.location.href = "./index.html";
+    window.location.href = "index.html";
   }
 }
 console.log(id);
@@ -67,7 +67,7 @@ fetch("http://localhost:3000/api/products/" + id)
       localStorage.setItem("panier", JSON.stringify(infoPanier));
       if (
         confirm(
-          "Votre produit a bien était ajouter au panier clicker sur ok pour consulter le panier ou annuler pour continuer votre commande."
+          "Votre produit a été ajouter au panier pou, cliquer sur OK, consulter le panier ou annuler pour continuer votre commande."
         )
       ) {
         window.location.href = "cart.html";
